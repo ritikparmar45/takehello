@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-slate-900 min-h-screen font-sans;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .wall-calendar-shadow {
+    @apply shadow-[0_20px_50px_rgba(0,0,0,0.15),0_10px_10px_rgba(0,0,0,0.1)];
+  }
+  
+  .date-cell {
+    @apply relative flex flex-col items-center justify-center p-2 transition-all duration-200 cursor-pointer hover:bg-zinc-100;
+  }
+}
+
+/* Custom Gradient for Calendar Header */
+.calendar-header-gradient {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+/* Page turn animation placeholder */
+.page-turn-enter {
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  opacity: 0;
+}
+.page-turn-enter-active {
+  transform: rotateX(0deg);
+  opacity: 1;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
